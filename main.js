@@ -7,7 +7,7 @@ toggleBtn.addEventListener("click", () => {
 });
 
 
-const nav = document.querySelector("nav");
+const nav = document.querySelector(".nav-fixed");
 window.onscroll = function(){
   var top = window.scrollY;
   if(top > 100){
