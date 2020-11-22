@@ -1,0 +1,30 @@
+{
+  "name": "hotel-california",
+  "version": "1.0.0",
+  "description": "A hotel website developed with JavaScript, CSS3, HTML5, media queries, responsive design integration techniques, Bootstrap, Font Awesome, flex technologies",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SinemSungur/hotel-california.git"
+  },
+  "keywords": [
+    "javascript",
+    "css3",
+    "html5",
+    "flex",
+    "responsive-web-design",
+    "bootstrap",
+    "media-queries"
+  ],
+  "author": "Sinem Sungur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SinemSungur/hotel-california.git/issues"
+  },
+  "homepage": "https://github.com/SinemSungur/hotel-california.git#readme",
+  "dependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
