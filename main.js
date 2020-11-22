@@ -6,6 +6,17 @@ toggleBtn.addEventListener("click", () => {
   navbarLinks.classList.toggle("active");
 });
 
+
+const nav = document.querySelector("nav");
+window.onscroll = function(){
+  var top = window.scrollY;
+  if(top > 100){
+    nav.classList.add('active')
+  }else{
+    nav.classList.remove('active')
+  }
+}
+
 // FORM
 
 const form = document.getElementById("form");

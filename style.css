@@ -24,7 +24,24 @@ header {
 .container {
   height: 100%;
 }
-
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 100;
+  background-color: transparent;
+}
+nav.active{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.199);
+}
 .navbar-logo {
   margin-top: 20px;
 }
@@ -407,7 +424,7 @@ footer p {
   background: #833ab4;
 }
 
-@media only screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .toggle-btn {
     display: flex;
   }
@@ -434,7 +451,7 @@ footer p {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .navbar-links li a {
     font-size: 0.8em;
   }
@@ -466,7 +483,7 @@ footer p {
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   div#comment-section {
     padding-bottom: 30px;
   }
@@ -506,7 +523,7 @@ footer p {
 
 }
 
-@media only screen and (min-width: 1025px) {
+@media screen and (min-width: 1025px) {
   .header-content p {
     padding: 1em 2em;
     margin-top: 10%;
