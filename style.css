@@ -37,7 +37,7 @@ header {
   opacity: 0.99;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
   color: #ffffff;
-  font-size: 1.2em;
+  font-size: 19px;
   font-weight: bold;
   margin: 30px;
   text-align: center;
@@ -487,7 +487,6 @@ footer p {
   .header-content p {
     padding: 20px;
     margin-top: 10%;
-    font-size: 1.8em;
   }
 
   #about-section p {
@@ -511,7 +510,6 @@ footer p {
   .header-content p {
     padding: 1em 2em;
     margin-top: 10%;
-    font-size: 2.2em;
   }
   .navbar-links li a {
     font-size: 1.1em;
