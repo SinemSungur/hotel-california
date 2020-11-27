@@ -54,10 +54,10 @@ header {
   opacity: 0.99;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
   color: #ffffff;
-  font-size: 19px;
   font-weight: bold;
-  margin: 30px;
+  margin: 40px;
   text-align: center;
+  font-size: 20px;
 }
 
 .header-content {
@@ -82,13 +82,18 @@ header {
   transition: 300ms all;
 }
 
+.visiblebtn {
+  visibility: hidden;
+}
+
 /* NAVBAR */
 
-.navbar {
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #fff;
+  position: relative;
 }
 
 .navbar-links ul {
@@ -357,7 +362,26 @@ input[type="submit"] {
 }
 input[type="submit"]:hover {
   background-color: #a1acbd9c;
-  transition: 300ms all;
+  transition: all 0.5s ease;
+}
+
+.form-group.success input{
+  border: 2px solid #2ecc71;
+}
+.form-group.error input{
+  border: 2px solid #e74c3c;
+}
+
+.form-group small {
+	color: #e74c3c;
+	position: absolute;
+  bottom: -20px;
+  left: 19px;
+	visibility: hidden;
+}
+
+.form-group.error small {
+	visibility: visible;
 }
 
 /* MAP SECTION */
@@ -432,7 +456,7 @@ footer p {
     display: none;
     width: 100%;
   }
-  .navbar {
+  .nav {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -449,15 +473,19 @@ footer p {
   .navbar-links.active {
     display: flex;
   }
+  .activities-content{
+    display: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
+  
   .navbar-links li a {
     font-size: 0.8em;
   }
   .navbar-links li a:hover {
     border-radius: 5px;
-    transition: 300ms all;
+    transition: all 0.5s ease;
   }
 
   .navbar-logo {
@@ -469,7 +497,7 @@ footer p {
   .header-content button {
     margin-top: 20px;
   }
-  .form.row {
+  form.row {
     padding-bottom: 30px;
   }
   .hero-content-header h2:after {
@@ -525,7 +553,6 @@ footer p {
 
 @media screen and (min-width: 1025px) {
   .header-content p {
-    padding: 1em 2em;
     margin-top: 10%;
   }
   .navbar-links li a {
