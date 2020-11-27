@@ -21,7 +21,7 @@
     <header>
       <!--Navbar-->
       <div class="container">
-        <nav class="navbar nav-fixed">
+        <div class="nav nav-fixed">
           <div class="navbar-logo">
             <img src="./images/Logo.png" alt="logo" />
           </div>
@@ -48,15 +48,15 @@
                 <a href="#map-section">iletişim</a>
               </li>
             </ul>
-          </div>
-        </nav>
+          </div> 
+        </div>
         <!--  HEADER CONTENT  -->
         <div class="header-content">
           <p>
             Hey merhaba! Hayatındaki en muhteşem tatil deneyimini yaşamaya
             gizemlerle dolu bu dünyaya girmeye ne dersin?
           </p>
-          <button>otel hakkında</button>
+          <button id="button">otel hakkında</button>
         </div>
       </div>
     </header>
@@ -384,27 +384,34 @@
         <div class="hero-content">
           <form id="form">
             <div class="container">
-              <div class="form row">
+              <div class="row">
+
                 <div class="form-group col-sm-12 col-md-6 col-lg-4">
                   <label for="name">ad soyad</label>
                   <input type="text" class="form-control" id="name" />
+                  <small> Error message </small>
                 </div>
 
                 <div class="form-group col-sm-12 col-md-6 col-lg-4">
                   <label for="email">e-posta</label>
                   <input type="email" class="form-control" id="email" />
+                  <small> Error message </small>
                 </div>
+
                 <div class="form-group col-sm-12 col-md-6 col-lg-4">
                   <label for="phone">telefon</label>
                   <input type="tel" class="form-control" id="phone" />
+                  <small> Error message </small>
                 </div>
                 <div class="form-group col-sm-12 col-md-6 col-lg-4">
                   <label for="fdate">giriş tarihi</label>
                   <input type="date" class="form-control" id="fdate" />
+                  <small> Error message </small>
                 </div>
                 <div class="form-group col-sm-12 col-md-6 col-lg-4">
                   <label for="ldate">çıkış tarihi</label>
                   <input type="date" class="form-control" id="ldate" />
+                  <small> Error message </small>
                 </div>
 
                 <div class="form-group col-sm-12 col-md-6 col-lg-4">
