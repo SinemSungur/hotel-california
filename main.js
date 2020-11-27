@@ -1,9 +1,12 @@
 // NAVBAR
 const toggleBtn = document.getElementsByClassName("toggle-btn")[0];
 const navbarLinks = document.getElementsByClassName("navbar-links")[0];
+const button = document.getElementById('button')
+
 
 toggleBtn.addEventListener("click", () => {
   navbarLinks.classList.toggle("active");
+  button.className = 'visiblebtn'
 });
 
 
@@ -17,14 +20,16 @@ window.onscroll = function(){
   }
 }
 
+
 // FORM
 
 const form = document.getElementById("form");
-const username = document.getElementById("name");
+const name = document.getElementById("name");
 const email = document.getElementById("email");
 const phone = document.getElementById("phone");
-const pickedFDate = document.getElementById("fdate");
-var currentDate = new Date()
+const fDate = document.getElementById("fdate");
+const lDate = document.getElementById("ldate");
+
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -32,26 +37,65 @@ form.addEventListener("submit", (e) => {
 });
 
 function checkInputs() {
-  if(name.value == ""){
-    alert("Lütfen Hiçbir Alanı Boş Bırakmayınız");
-    phone.focus();
-    return false;
-  }
+  
+const nameValue = name.value.trim();
+const emailValue = email.value.trim();
+const phoneValue = phone.value.trim();
+const fDateValue = fDate.value;
+const lDateValue = lDate.value;
 
-  if (email.value == "") {
-    alert("Lütfen Hiçbir Alanı Boş Bırakmayınız");
-    email.focus();
-    return false;
-  }
-  if (phone.value === "") {
-    alert("Lütfen Hiçbir Alanı Boş Bırakmayınız");
-    phone.focus();
-    return false;      
-  }
-  if (pickedFDate.value < currentDate.value) {
-    alert("İleri tarihli bir gün seçiniz");
-    return false;
-  }
+var msec = Date.parse(fDateValue);
+var currentDate = new Date();
+var msecCurrentDate = Date.parse(currentDate)
 
-  return true;
+
+if(nameValue === ""){
+  setErrorFor(name,'Adınızı ve Soyadınızı Giriniz');
+}else{
+  setSuccessFor(name)
+}
+
+if(emailValue === ""){
+  setErrorFor(email,'Emailinizi Giriniz');
+} else if(!isEmail(emailValue)){
+setErrorFor(email,'Geçerli Email Giriniz')
+} else{
+  setSuccessFor(email);
+}
+
+if(phoneValue === ""){
+  setErrorFor(phone,'Telefon Numaranızı Giriniz');
+}else{
+  setSuccessFor(phone)
+}
+
+if(msec - msecCurrentDate <= 0){
+  setErrorFor(fdate, 'Lütfen İleri Tarih Seçiniz');
+}else if(fDateValue === ""){
+  setErrorFor(fdate, 'Lütfen Tarih Seçiniz');
+}else{
+  setSuccessFor(fdate);
+}
+
+if(lDateValue === ""){
+  setErrorFor(ldate, 'Lütfen Tarih Seçiniz');
+}else{
+  setSuccessFor(ldate);
+}
+
 };
+
+function setErrorFor(input, message){
+   const formControl = input.parentElement;
+   const small = formControl.querySelector('small');
+   formControl.className = 'form-group error col-sm-12 col-md-6 col-lg-4';
+   small.innerText = message;
+}
+function setSuccessFor(input){
+  const formControl = input.parentElement;
+  formControl.className = 'form-group success col-sm-12 col-md-6 col-lg-4';
+}
+function isEmail(email){
+  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+
